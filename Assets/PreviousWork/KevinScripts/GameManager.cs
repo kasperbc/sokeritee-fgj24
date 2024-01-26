@@ -86,4 +86,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void IncreaseTimer(float amount)
+    {
+        timer += amount;
+        UpdateTimerText();
+    }
+
+    public void DecreaseTimer(float amount)
+    {
+        timer -= amount;
+        UpdateTimerText();
+    }
+
 }

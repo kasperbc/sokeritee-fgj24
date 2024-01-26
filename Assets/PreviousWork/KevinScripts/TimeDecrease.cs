@@ -10,7 +10,7 @@ public class TimeDecrease : MonoBehaviour
     {
         if (collision.gameObject.name == "Car")
         {
-            Debug.Log("Player touched Ingredient");
+            Debug.Log("Player touched Chopstick");
 
             GameManager gameManager = FindObjectOfType<GameManager>();
 

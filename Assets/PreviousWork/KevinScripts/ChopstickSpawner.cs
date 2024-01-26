@@ -8,7 +8,7 @@ public class ChopstickSpawner : MonoBehaviour
     public Transform playerTransform;
     public float spawnRadius = 5f; 
     public float spawnRate = 10f;
-    public float timeOnGround = 5f;
+    public float timeOnGround = 10f;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class ChopstickSpawner : MonoBehaviour
     {
         // Calculate a random position within the specified radius 
         Vector3 randomPosition = Random.insideUnitCircle * spawnRadius;
-        Vector3 spawnPosition = playerTransform.position + new Vector3(randomPosition.x,  randomPosition.y, 0f);
+        Vector3 spawnPosition = playerTransform.position + new Vector3(randomPosition.x,  randomPosition.y + 10, 0f);
 
         
         GameObject chopstick = Instantiate(chopstickPrefab, spawnPosition, Quaternion.identity);

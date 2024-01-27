@@ -1134,10 +1134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e493bb220d2864ca97f750258bfaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftLeg: {fileID: 1127995493}
-  rotationSpeed: 200
-  maxForwardAngle: 90
-  maxBackwardAngle: -40
 --- !u!1 &1164253680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,9 +1237,8 @@ MonoBehaviour:
   endSceneChopstickPrefab: {fileID: 5276136841077854993, guid: 4085e9eede9a83f4b8ec5d5078526d1c,
     type: 3}
   playerTransform: {fileID: 753353360}
-  offset: 1
-  endChopTimeOnGround: 0
-  upwardSpeed: 30
+  endChopTimeOnGround: 1
+  PlayerUpwardSpeed: 20
 --- !u!4 &1252041942
 Transform:
   m_ObjectHideFlags: 0
@@ -2602,10 +2597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599b9f34ca2938743b0fd18e2b5cf24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightLeg: {fileID: 2107838556}
-  rotationSpeed: 60
-  maxForwardAngle: 90
-  maxBackwardAngle: -40
 --- !u!1001 &753945743917786328
 PrefabInstance:
   m_ObjectHideFlags: 0

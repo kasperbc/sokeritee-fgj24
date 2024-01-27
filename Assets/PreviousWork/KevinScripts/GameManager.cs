@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject endSceneChopstickPrefab;
     public Transform playerTransform;
-    public float offset = 1f;
+    
     public float endChopTimeOnGround = 5f;
-    public float upwardSpeed = 1f;
+    public float PlayerUpwardSpeed = 1f;
 
     private bool hasEndChopsticksSpawned = false;
 
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
                 EndSceneChopsticks();
                 hasEndChopsticksSpawned = true; 
 
-                Invoke("LoseGame", 5f);
+                Invoke("LoseGame", 2f);
             }
             else
             {
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
             if (hasEndChopsticksSpawned)
             {
-                playerTransform.Translate(Vector3.up * upwardSpeed * Time.deltaTime);
+                playerTransform.Translate(Vector3.up * PlayerUpwardSpeed * Time.deltaTime);
             }
 
             if (Input.GetKeyDown(KeyCode.P))
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     void LoseGame()
     {
        timerText.text = "Out Of Time";
-        Invoke("RestartLevel", 5f);
+        Invoke("RestartLevel", 1f);
     }
 
    

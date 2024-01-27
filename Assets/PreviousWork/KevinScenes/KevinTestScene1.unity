@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1238,6 +1238,12 @@ MonoBehaviour:
   timeLimit: 30
   timerText: {fileID: 159028940}
   pauseButton: {fileID: 1681766694}
+  endSceneChopstickPrefab: {fileID: 5276136841077854993, guid: 4085e9eede9a83f4b8ec5d5078526d1c,
+    type: 3}
+  playerTransform: {fileID: 753353360}
+  offset: 1
+  endChopTimeOnGround: 0
+  upwardSpeed: 30
 --- !u!4 &1252041942
 Transform:
   m_ObjectHideFlags: 0
@@ -2729,6 +2735,16 @@ PrefabInstance:
     - target: {fileID: 4084321217349754413, guid: 510a08d8e80659744b2b5be5f746c793,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260754687527188693, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260754687527188693, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5657411304008592083, guid: 510a08d8e80659744b2b5be5f746c793,

@@ -10,7 +10,8 @@ public class LegController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 60f;
     [SerializeField] private float maxForwardAngle = 90f;
     [SerializeField] private float maxBackwardAngle = -40f;
-   
+    [SerializeField] private float maxForwardSideAngle = 0f;
+    [SerializeField] private float maxBackwardSideAngle = -90f;
 
     private bool isRotating = false;
     private int rotationDirection = -1;
@@ -73,13 +74,13 @@ public class LegController : MonoBehaviour
         }
 
 
-        if (newAngle >= maxForwardAngle || newAngle <= maxBackwardAngle)
+        if (newAngle >= maxForwardSideAngle || newAngle <= maxBackwardSideAngle)
         {
             rotationDirection *= -1; // Change direction
         }
 
 
-        newAngle = Mathf.Clamp(newAngle, maxBackwardAngle, maxForwardAngle);
+        newAngle = Mathf.Clamp(newAngle, maxBackwardSideAngle, maxForwardSideAngle);
 
         
         leg.localRotation = Quaternion.Euler(newAngle, leg.localEulerAngles.y, leg.localEulerAngles.z);

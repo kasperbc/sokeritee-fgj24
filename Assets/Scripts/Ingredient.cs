@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
@@ -21,6 +20,8 @@ public class Ingredient : MonoBehaviour
 
     private Vector3 floorHitPos;
 
+    public AudioSource collectItem;
+
     void Start()
     {        
         if (GameObject.FindWithTag("Player"))
@@ -35,7 +36,7 @@ public class Ingredient : MonoBehaviour
         {
             Fall();
         }
-        else
+        else if (CompareTag("Item"))
         {
             Rotate();
         }
@@ -74,11 +75,13 @@ public class Ingredient : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Player")
+        if(other.transform.root.gameObject.name == "Player")
         {
-            transform.SetParent(player);
+            transform.SetParent(other.transform);
             tag = "CollectedItem";
-            //Debug.Log(self.name + "tag is changed to " + newTag);
+            Debug.Log(name + "tag is changed to CollectedItem");
+            collectItem.Play();
+            Destroy(GetComponent<Collider>());
             //self.gameObject.layer = playerLayer;
 
             //RaycastHit hit;
@@ -97,9 +100,4 @@ public class Ingredient : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    //private void ScoreCalculation()
-    //{
-    //    score = 
-    //}
 }

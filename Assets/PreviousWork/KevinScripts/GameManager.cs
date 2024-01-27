@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public float timeLimit = 30f;
     private float timer;
+    private float totalTime;
     private bool isPaused = false;
 
     public TextMeshProUGUI timerText;
     public Button pauseButton;
+
+    public GameObject endUI;
 
     public GameObject endSceneChopstickPrefab;
     private Transform playerTransform;
@@ -29,11 +32,13 @@ public class GameManager : MonoBehaviour
         
         pauseButton.onClick.AddListener(TogglePause);
         playerTransform = GameObject.FindWithTag("Player").transform;
+
+        endUI.SetActive(false);
     }
 
     void Update()
     {
-        if (!isPaused)
+        if (!isPaused || GameStart.instance.gameStarted == false)
         {
             if (timer <= 0f && !hasEndChopsticksSpawned)
             {
@@ -45,6 +50,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 timer -= Time.deltaTime;
+                totalTime += Time.deltaTime;
                 UpdateTimerText();
             }
 
@@ -77,8 +83,9 @@ public class GameManager : MonoBehaviour
 
     void LoseGame()
     {
-       timerText.text = "Out Of Time";
-        Invoke("RestartLevel", 1f);
+        timerText.text = "Out Of Time";
+        GameStart.instance.gameStarted = false;
+        Invoke(nameof(ShowEndScreen), 1f);
     }
 
    
@@ -95,6 +102,14 @@ public class GameManager : MonoBehaviour
         Invoke("NextLevel", 2f);
     }
 
+    public void ShowEndScreen()
+    {
+        endUI.SetActive(true);
+        GameObject.Find("SurviveTime").GetComponent<TextMeshProUGUI>().text = $"You survived {Mathf.CeilToInt(totalTime)} seconds";
+        GameObject.Find("MusicLoop").GetComponent<AudioSource>().Stop();
+        StartCoroutine(GameObject.Find("GameOverLine").GetComponent<GameOverLine>().PlayRandomLine());
+    }
+
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -103,6 +118,11 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void IncreaseTimer(float amount)

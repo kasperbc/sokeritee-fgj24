@@ -5,17 +5,15 @@ using UnityEngine;
 public class HeadCollider : MonoBehaviour
 {
     public AudioClip[] clips;
-    AudioSource audioSource;
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    public AudioSource voiceSource;
+    public AudioSource fallSource;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 3)
         {
             StartCoroutine(PlayRandomClip());
+            //fallSource.Play();
         }
     }
 
@@ -23,14 +21,14 @@ public class HeadCollider : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(0, 2f));
 
-        if (audioSource.isPlaying == true)
+        if (voiceSource.isPlaying == true || GameStart.instance.gameStarted == false)
         {
-            yield return null;
+            yield break;
         }
 
-        audioSource.clip = clips[Random.Range(0, clips.Length)];
+        voiceSource.clip = clips[Random.Range(0, clips.Length)];
 
-        audioSource.Play();
+        voiceSource.Play();
 
     }
 }

@@ -36,5 +36,6 @@ public class ChopstickSpawner : MonoBehaviour
         // Attach the behavior script and set the ground time
         ChopstickBehavior chopstickBehavior = chopstick.AddComponent<ChopstickBehavior>();
         chopstickBehavior.SetGroundTime(timeOnGround);
+
     }
 }

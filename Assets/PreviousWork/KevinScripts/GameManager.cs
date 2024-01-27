@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public Button pauseButton;
 
+    /*public GameObject endSceneChopstickPrefab;
+    public Transform playerTransform;
+    public float offset = 1f;
+    public float endChopTimeOnGround = 5f;
+    public float upwardSpeed = 30f;*/
+
 
     void Start()
     {
@@ -29,7 +35,9 @@ public class GameManager : MonoBehaviour
             
             if (timer <= 0f)
             {
-                LoseGame();
+                //EndSceneChopsticks();
+                
+                Invoke("LoseGame", 2f);
             }
             else
             {
@@ -97,5 +105,37 @@ public class GameManager : MonoBehaviour
         timer -= amount;
         UpdateTimerText();
     }
+
+   /* public void EndSceneChopsticks()
+    {
+        if (endSceneChopstickPrefab != null)
+        {
+            Vector3 spawnPosition = playerTransform.position + new Vector3(1f, 0f, 0f);
+            GameObject endSceneChopstick = Instantiate(endSceneChopstickPrefab, spawnPosition, Quaternion.identity);
+
+            if (endSceneChopstick != null)
+            {
+                ChopstickBehavior endChopstickBehavior = endSceneChopstick.GetComponent<ChopstickBehavior>();
+                if (endChopstickBehavior != null)
+                {
+                    endChopstickBehavior.SetGroundTime(endChopTimeOnGround);
+                }
+                else
+                {
+                    Debug.LogError("ChopstickBehavior component not found on endSceneChopstick.");
+                }
+            }
+            else
+            {
+                Debug.LogError("endSceneChopstick instantiation failed.");
+            }
+        }
+        else
+        {
+            Debug.LogError("endSceneChopstickPrefab is not assigned in the GameManager.");
+        }
+    }*/
+
+
 
 }

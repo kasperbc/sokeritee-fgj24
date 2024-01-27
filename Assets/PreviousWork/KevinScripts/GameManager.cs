@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public Button pauseButton;
 
-    /*public GameObject endSceneChopstickPrefab;
+    public GameObject endSceneChopstickPrefab;
     public Transform playerTransform;
     public float offset = 1f;
     public float endChopTimeOnGround = 5f;
-    public float upwardSpeed = 30f;*/
+    public float upwardSpeed = 30f;
+
+    private bool hasEndChopsticksSpawned = false;
 
 
     void Start()
@@ -32,16 +34,15 @@ public class GameManager : MonoBehaviour
     {
         if (!isPaused)
         {
-            
-            if (timer <= 0f)
+            if (timer <= 0f && !hasEndChopsticksSpawned)
             {
-                //EndSceneChopsticks();
-                
+                EndSceneChopsticks();
+                hasEndChopsticksSpawned = true; 
+
                 Invoke("LoseGame", 0.5f);
             }
             else
             {
-               
                 timer -= Time.deltaTime;
                 UpdateTimerText();
             }
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
         UpdateTimerText();
     }
 
-   /* public void EndSceneChopsticks()
+    public void EndSceneChopsticks()
     {
         if (endSceneChopstickPrefab != null)
         {
@@ -119,6 +120,9 @@ public class GameManager : MonoBehaviour
                 if (endChopstickBehavior != null)
                 {
                     endChopstickBehavior.SetGroundTime(endChopTimeOnGround);
+
+                    // Set the playerTransform for the endChopstickBehavior
+                    endChopstickBehavior.SetPlayerTransform(playerTransform);
                 }
                 else
                 {
@@ -134,7 +138,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("endSceneChopstickPrefab is not assigned in the GameManager.");
         }
-    }*/
+
+        // Move the player upwards
+        playerTransform.GetComponent<Rigidbody>().isKinematic = true;
+        playerTransform.Translate(Vector3.up * upwardSpeed * Time.deltaTime);
+    }
 
 
 

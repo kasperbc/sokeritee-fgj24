@@ -7,7 +7,7 @@ public class ChopstickSpawner : MonoBehaviour
     public GameObject chopstickPrefab;
     public Transform playerTransform;
     public float spawnRadius = 5f; 
-    public float spawnRate = 10f;
+    public float spawnRate = 5f;
     public float timeOnGround = 10f;
 
     private void Start()
@@ -17,7 +17,7 @@ public class ChopstickSpawner : MonoBehaviour
 
     IEnumerator DelayedStart()
     {
-        yield return new WaitForSeconds(6f); 
+        yield return new WaitForSeconds(10f); 
         StartCoroutine(SpawnChopsticks());
     }
 
@@ -34,7 +34,7 @@ public class ChopstickSpawner : MonoBehaviour
     {
         
         Vector3 randomPosition = Random.insideUnitCircle * spawnRadius;
-        Vector3 spawnPosition = playerTransform.position + new Vector3(randomPosition.x+3,  randomPosition.y + 10, 0f);
+        Vector3 spawnPosition = playerTransform.position + new Vector3(randomPosition.x,  randomPosition.y + 10, 0f);
 
         
         GameObject chopstick = Instantiate(chopstickPrefab, spawnPosition, Quaternion.identity);

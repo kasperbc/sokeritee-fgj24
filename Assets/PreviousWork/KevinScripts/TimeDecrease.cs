@@ -11,7 +11,8 @@ public class TimeDecrease : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "Player")
+        string collidedObjectName = collision.gameObject.name;
+        if (collision.gameObject.name == "Foot" || collidedObjectName == "Leg" )
         {
             Debug.Log("Player touched Chopstick");
 

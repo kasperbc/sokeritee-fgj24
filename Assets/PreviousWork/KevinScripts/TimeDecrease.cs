@@ -21,7 +21,7 @@ public class TimeDecrease : MonoBehaviour
             {
 
                 gameManager.DecreaseTimer(timeDecrease);
-               // chopstickTrapAudio.Play();
+               chopstickTrapAudio.Play();
             }
         }
     }

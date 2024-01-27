@@ -11,7 +11,7 @@ public class TimeDecrease : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Foot")
         {
             Debug.Log("Player touched Chopstick");
 
@@ -21,7 +21,7 @@ public class TimeDecrease : MonoBehaviour
             {
 
                 gameManager.DecreaseTimer(timeDecrease);
-               chopstickTrapAudio.Play();
+              // chopstickTrapAudio.Play();
             }
         }
     }

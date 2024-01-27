@@ -8,7 +8,7 @@ public class TimerIncrease : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Foot")
         {
             Debug.Log("Player touched Ingredient");
 

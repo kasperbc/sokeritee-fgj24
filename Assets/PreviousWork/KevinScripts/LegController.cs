@@ -6,21 +6,22 @@ public class LegController : MonoBehaviour
 {
     public Transform leg;
     public KeyCode moveKey;
+    public KeyCode moveBackKey;
     public KeyCode moveSideKey;
     [SerializeField] private float rotationSpeed = 60f;
-    [SerializeField] private float maxForwardAngle = 90f;
-    [SerializeField] private float maxBackwardAngle = -40f;
     [SerializeField] private float maxForwardSideAngle = 0f;
     [SerializeField] private float maxBackwardSideAngle = -90f;
-
-    private bool isRotating = false;
-    private int rotationDirection = -1;
+    private float sideRotationDirection;
 
     void FixedUpdate()
     {
         if (Input.GetKey(moveKey))
         {
-            RotateLeg();
+            RotateLeg(1);
+        }
+        else if (Input.GetKey(moveBackKey))
+        {
+            RotateLeg(-1);
         }
         if (Input.GetKey(moveSideKey))
         {
@@ -28,7 +29,7 @@ public class LegController : MonoBehaviour
         }
     }
 
-    void RotateLeg()
+    void RotateLeg(float rotationDirection)
     {
         float rotationAmount = rotationSpeed * Time.fixedDeltaTime;
 
@@ -44,16 +45,6 @@ public class LegController : MonoBehaviour
             newAngle -= 360f;
         }
 
-
-        if (newAngle >= maxForwardAngle || newAngle <= maxBackwardAngle)
-        {
-            rotationDirection *= -1; // Change direction
-        }
-
-
-        newAngle = Mathf.Clamp(newAngle, maxBackwardAngle, maxForwardAngle);
-
-
         leg.localRotation = Quaternion.Euler(leg.localEulerAngles.x, leg.localEulerAngles.y, newAngle);
     }
 
@@ -65,7 +56,7 @@ public class LegController : MonoBehaviour
         float currentAngle = leg.localRotation.eulerAngles.x;
 
 
-        float newAngle = currentAngle + rotationAmount * rotationDirection;
+        float newAngle = currentAngle + rotationAmount * sideRotationDirection;
 
 
         if (newAngle > 180f)
@@ -76,7 +67,7 @@ public class LegController : MonoBehaviour
 
         if (newAngle >= maxForwardSideAngle || newAngle <= maxBackwardSideAngle)
         {
-            rotationDirection *= -1; // Change direction
+            sideRotationDirection *= -1; // Change direction
         }
 
 

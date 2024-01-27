@@ -12,6 +12,12 @@ public class ChopstickSpawner : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(DelayedStart());
+    }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(6f); 
         StartCoroutine(SpawnChopsticks());
     }
 
@@ -26,14 +32,14 @@ public class ChopstickSpawner : MonoBehaviour
 
     void SpawnChopstick()
     {
-        // Calculate a random position within the specified radius 
+        
         Vector3 randomPosition = Random.insideUnitCircle * spawnRadius;
-        Vector3 spawnPosition = playerTransform.position + new Vector3(randomPosition.x,  randomPosition.y + 10, 0f);
+        Vector3 spawnPosition = playerTransform.position + new Vector3(randomPosition.x+3,  randomPosition.y + 10, 0f);
 
         
         GameObject chopstick = Instantiate(chopstickPrefab, spawnPosition, Quaternion.identity);
 
-        // Attach the behavior script and set the ground time
+       
         ChopstickBehavior chopstickBehavior = chopstick.AddComponent<ChopstickBehavior>();
         chopstickBehavior.SetGroundTime(timeOnGround);
 

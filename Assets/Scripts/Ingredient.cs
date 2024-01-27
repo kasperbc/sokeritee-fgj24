@@ -80,7 +80,8 @@ public class Ingredient : MonoBehaviour
             transform.SetParent(other.transform);
             tag = "CollectedItem";
             Debug.Log(name + "tag is changed to CollectedItem");
-            collectItem.Play();
+            if (collectItem)
+                collectItem.Play();
             Destroy(GetComponent<Collider>());
             //self.gameObject.layer = playerLayer;
 

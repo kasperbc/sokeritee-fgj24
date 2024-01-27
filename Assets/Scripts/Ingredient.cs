@@ -20,8 +20,6 @@ public class Ingredient : MonoBehaviour
 
     private Vector3 floorHitPos;
 
-    public AudioSource collectItem;
-
     void Start()
     {        
         if (GameObject.FindWithTag("Player"))
@@ -80,8 +78,6 @@ public class Ingredient : MonoBehaviour
             transform.SetParent(other.transform);
             tag = "CollectedItem";
             Debug.Log(name + "tag is changed to CollectedItem");
-            if (collectItem)
-                collectItem.Play();
             Destroy(GetComponent<Collider>());
             //self.gameObject.layer = playerLayer;
 

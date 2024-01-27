@@ -296,6 +296,11 @@ PrefabInstance:
       propertyPath: moveKey
       value: 106
       objectReference: {fileID: 0}
+    - target: {fileID: 3403558216758755256, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: moveSideKey
+      value: 107
+      objectReference: {fileID: 0}
     - target: {fileID: 4084321217349754413, guid: 510a08d8e80659744b2b5be5f746c793,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,6 +360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveKey
       value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584666975861800907, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: moveSideKey
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 5657411304008592083, guid: 510a08d8e80659744b2b5be5f746c793,
         type: 3}
@@ -790,6 +800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657818621738367448, guid: b6a1ae526ea4020418d8bb2ab338ce97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

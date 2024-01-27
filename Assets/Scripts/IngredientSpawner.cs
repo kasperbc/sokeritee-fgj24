@@ -34,7 +34,7 @@ public class IngredientSpawner : MonoBehaviour
 
     void SpawnIngredient()
     {
-        GameObject randomIngredient = spawnableIngredients[Random.Range(0, spawnableIngredients.Length - 1)];
+        GameObject randomIngredient = spawnableIngredients[Random.Range(0, spawnableIngredients.Length)];
 
         GameObject instantiatedIngr = Instantiate(randomIngredient);
 

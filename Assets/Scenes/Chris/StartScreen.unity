@@ -197,9 +197,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obj: {fileID: 1693325836}
-  _transform: {fileID: 1267464436}
   _cam: {fileID: 1841829033}
-  _vcam: {fileID: 1267464435}
+  _fromCam: {fileID: 1841829034}
+  _toCam: {fileID: 1092449234}
+  _menu: {fileID: 1693325840}
+  _horizontalMoveSpeed: 2
+  _verticalMoveSpeed: 1.5
 --- !u!4 &629563763
 Transform:
   m_ObjectHideFlags: 0
@@ -209,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 629563761}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0176647, y: 1.4500576, z: -2.1358662}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -365,6 +368,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1092449233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092449234}
+  m_Layer: 0
+  m_Name: ToCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092449234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092449233}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5730305, y: -0.025019057, z: 0.035730924, w: 0.8183724}
+  m_LocalPosition: {x: 0, y: 1.5, z: -0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 5}
 --- !u!1 &1267464434
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +410,7 @@ GameObject:
   - component: {fileID: 1267464436}
   - component: {fileID: 1267464435}
   m_Layer: 0
-  m_Name: CM-vCam-1
+  m_Name: FromCam-vCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,4 +985,5 @@ SceneRoots:
   - {fileID: 1711077634}
   - {fileID: 1693325840}
   - {fileID: 1267464436}
+  - {fileID: 1092449234}
   - {fileID: 629563763}

@@ -158,7 +158,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -244,7 +244,7 @@ MonoBehaviour:
   self: {fileID: 74962109}
   player: {fileID: 1917673928}
   destroyTime: 5
-  newTag: Fish
+  newTag: CollectedItem
 --- !u!1 &265301161
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -366,7 +366,7 @@ MonoBehaviour:
   self: {fileID: 265301161}
   player: {fileID: 1917673928}
   destroyTime: 10
-  newTag: Avocado
+  newTag: CollectedItem
 --- !u!1 &290847359
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+  rb: {fileID: 0}
 --- !u!135 &1917673925
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -865,7 +866,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -951,7 +952,7 @@ MonoBehaviour:
   self: {fileID: 2026219205}
   player: {fileID: 1917673928}
   destroyTime: 5
-  newTag: Fish
+  newTag: CollectedItem
 --- !u!1 &2067060038
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +988,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1073,7 +1074,7 @@ MonoBehaviour:
   self: {fileID: 2067060038}
   player: {fileID: 1917673928}
   destroyTime: 10
-  newTag: Avocado
+  newTag: CollectedItem
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -2221,6 +2221,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1859752343579299336, guid: 92f47bdd97d39cf48af06c083dc9a465,
+        type: 3}
+      propertyPath: spawnableIngredients.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859752343579299336, guid: 92f47bdd97d39cf48af06c083dc9a465,
+        type: 3}
+      propertyPath: spawnableIngredients.Array.data[3]
+      value: 
+      objectReference: {fileID: 4014838273456251854, guid: 4b0d850d9d2232445a11ac98edbfb2ef,
+        type: 3}
     - target: {fileID: 6668179239301037736, guid: 92f47bdd97d39cf48af06c083dc9a465,
         type: 3}
       propertyPath: m_Name

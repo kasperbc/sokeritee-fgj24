@@ -1224,6 +1224,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8007222602538784728, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: fallClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: cba791273f8bb1a43960f0ba3234bf2c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

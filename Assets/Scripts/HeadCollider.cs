@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeadCollider : MonoBehaviour
 {
     public AudioClip[] clips;
+
     public AudioSource voiceSource;
     public AudioSource fallSource;
 
@@ -13,7 +14,7 @@ public class HeadCollider : MonoBehaviour
         if (other.gameObject.layer == 3)
         {
             StartCoroutine(PlayRandomClip());
-            //fallSource.Play();
+            PlayRandomFallSound();
         }
     }
 
@@ -30,5 +31,12 @@ public class HeadCollider : MonoBehaviour
 
         voiceSource.Play();
 
+    }
+
+    void PlayRandomFallSound()
+    {
+        fallSource.pitch = Random.Range(0.9f, 1.1f);
+
+        fallSource.Play();
     }
 }

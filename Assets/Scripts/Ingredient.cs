@@ -79,6 +79,8 @@ public class Ingredient : MonoBehaviour
             tag = "CollectedItem";
             Debug.Log(name + "tag is changed to CollectedItem");
             Destroy(GetComponent<Collider>());
+
+            GetComponent<AudioSource>().Play();
             //self.gameObject.layer = playerLayer;
 
             //RaycastHit hit;

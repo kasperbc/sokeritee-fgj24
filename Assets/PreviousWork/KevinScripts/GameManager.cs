@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Button pauseButton;
 
     public GameObject endSceneChopstickPrefab;
-    public Transform playerTransform;
+    private Transform playerTransform;
     
     public float endChopTimeOnGround = 5f;
     public float PlayerUpwardSpeed = 1f;
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
         
         pauseButton.onClick.AddListener(TogglePause);
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
@@ -62,8 +63,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateTimerText()
     {
-        
-        timerText.text = "Time: " + Mathf.Ceil(timer).ToString();
+        timerText.text = "Time: " + Mathf.Clamp(Mathf.Ceil(timer), 0, int.MaxValue).ToString();
     }
 
     void TogglePause()

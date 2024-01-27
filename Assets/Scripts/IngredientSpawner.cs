@@ -17,6 +17,11 @@ public class IngredientSpawner : MonoBehaviour
     }
     void Update()
     {
+        if (GameStart.instance.gameStarted == false)
+        {
+            return;
+        }
+
         timeSinceLastSpawn += Time.deltaTime;
 
         if (timeSinceLastSpawn > nextSpawnTime)

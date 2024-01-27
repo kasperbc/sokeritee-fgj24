@@ -11,7 +11,7 @@ public class LegController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 60f;
     [SerializeField] private float maxForwardSideAngle = 0f;
     [SerializeField] private float maxBackwardSideAngle = -90f;
-    private float sideRotationDirection;
+    private float sideRotationDirection = 1;
 
     void FixedUpdate()
     {

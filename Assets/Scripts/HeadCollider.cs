@@ -15,14 +15,22 @@ public class HeadCollider : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            PlayRandomClip();
+            StartCoroutine(PlayRandomClip());
         }
     }
 
-    void PlayRandomClip()
+    IEnumerator PlayRandomClip()
     {
+        yield return new WaitForSeconds(Random.Range(0, 2f));
+
+        if (audioSource.isPlaying == true)
+        {
+            yield return null;
+        }
+
         audioSource.clip = clips[Random.Range(0, clips.Length)];
 
         audioSource.Play();
+
     }
 }

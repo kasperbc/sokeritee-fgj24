@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
     {
         if (endSceneChopstickPrefab != null)
         {
-            Vector3 spawnPosition = playerTransform.position + new Vector3(0f, 1f, 0f);
+            Vector3 spawnPosition = playerTransform.position + new Vector3(1f, 3f, 0f);
             GameObject endSceneChopstick = Instantiate(endSceneChopstickPrefab, spawnPosition, Quaternion.identity);
 
             if (endSceneChopstick != null)
@@ -157,7 +157,8 @@ public class GameManager : MonoBehaviour
                     endSceneChopstick.transform.parent = playerTransform.gameObject.transform;
 
                     // Optionally, adjust the local position of the endChopstick
-                    endSceneChopstick.transform.localPosition = new Vector3(0f, 1f, 0f);
+                    endSceneChopstick.transform.localPosition = new Vector3(0f, 2f, 0f);
+                    endSceneChopstick.transform.rotation = Quaternion.Euler(0f, 0f, 45f); // Adjust the rotation angles as needed
                 }
                 else
                 {

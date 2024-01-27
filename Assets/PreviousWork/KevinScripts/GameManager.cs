@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviour
     {
         timer = timeLimit;
         UpdateTimerText();
-
-        
+                
         pauseButton.onClick.AddListener(TogglePause);
         playerTransform = GameObject.FindWithTag("Player").transform;
 
@@ -92,7 +91,7 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
        
-        isPaused = true;
+        //isPaused = true;
 
        
         Debug.Log("You Win!");

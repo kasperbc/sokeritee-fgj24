@@ -18,7 +18,7 @@ public class ChopstickBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.layer == 3)
         {
             // Disable the Rigidbody's physics behavior by setting it to kinematic
             Rigidbody chopstickRigidbody = GetComponent<Rigidbody>();

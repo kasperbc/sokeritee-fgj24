@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
+  - CollectedItem
+  - Item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

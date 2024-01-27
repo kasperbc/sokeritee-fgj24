@@ -9,7 +9,7 @@ public class TimerIncrease : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         string collidedObjectName = collision.gameObject.name;
-        if (collision.gameObject.name == "Foot" || collidedObjectName == "Leg")
+        if (collision.gameObject.name == "Foot" || collidedObjectName == "Leg" || collidedObjectName == "Rice_ball")
         {
             Debug.Log("Player touched Ingredient");
 

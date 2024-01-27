@@ -20,7 +20,7 @@ public class CameraControl : MonoBehaviour
 
             if (Input.GetMouseButton(1))
             {
-                transform.Rotate(new Vector3(0, previousMousePos.x - Input.mousePosition.x,0) * 0.5f);
+                transform.Rotate(new Vector3(0, previousMousePos.x - Input.mousePosition.x, 0) * 0.5f);
             }
         }
         previousMousePos = Input.mousePosition;

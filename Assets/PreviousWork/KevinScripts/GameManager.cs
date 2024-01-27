@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             {
                 //EndSceneChopsticks();
                 
-                Invoke("LoseGame", 2f);
+                Invoke("LoseGame", 0.5f);
             }
             else
             {

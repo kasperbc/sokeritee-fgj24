@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public Button pauseButton;
 
-    /*public GameObject endSceneChopstickPrefab;
+    public GameObject endSceneChopstickPrefab;
     public Transform playerTransform;
-    public float offset = 1f;
+    
     public float endChopTimeOnGround = 5f;
-    public float upwardSpeed = 30f;*/
+    public float PlayerUpwardSpeed = 1f;
+
+    private bool hasEndChopsticksSpawned = false;
 
 
     void Start()
@@ -32,18 +34,27 @@ public class GameManager : MonoBehaviour
     {
         if (!isPaused)
         {
-            
-            if (timer <= 0f)
+            if (timer <= 0f && !hasEndChopsticksSpawned)
             {
-                //EndSceneChopsticks();
-                
-                Invoke("LoseGame", 0.5f);
+                EndSceneChopsticks();
+                hasEndChopsticksSpawned = true; 
+
+                Invoke("LoseGame", 2f);
             }
             else
             {
-               
                 timer -= Time.deltaTime;
                 UpdateTimerText();
+            }
+
+            if (hasEndChopsticksSpawned)
+            {
+                playerTransform.Translate(Vector3.up * PlayerUpwardSpeed * Time.deltaTime);
+            }
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                timer = 0;
             }
         }
     }
@@ -67,7 +78,7 @@ public class GameManager : MonoBehaviour
     void LoseGame()
     {
        timerText.text = "Out Of Time";
-        Invoke("RestartLevel", 2f);
+        Invoke("RestartLevel", 1f);
     }
 
    
@@ -106,11 +117,11 @@ public class GameManager : MonoBehaviour
         UpdateTimerText();
     }
 
-   /* public void EndSceneChopsticks()
+    public void EndSceneChopsticks()
     {
         if (endSceneChopstickPrefab != null)
         {
-            Vector3 spawnPosition = playerTransform.position + new Vector3(1f, 0f, 0f);
+            Vector3 spawnPosition = playerTransform.position + new Vector3(0f, 1f, 0f);
             GameObject endSceneChopstick = Instantiate(endSceneChopstickPrefab, spawnPosition, Quaternion.identity);
 
             if (endSceneChopstick != null)
@@ -119,6 +130,15 @@ public class GameManager : MonoBehaviour
                 if (endChopstickBehavior != null)
                 {
                     endChopstickBehavior.SetGroundTime(endChopTimeOnGround);
+
+                    // Set the playerTransform for the endChopstickBehavior
+                    endChopstickBehavior.SetPlayerTransform(playerTransform);
+
+                    // Make the endChopstick a child of the player object
+                    endSceneChopstick.transform.parent = playerTransform.gameObject.transform;
+
+                    // Optionally, adjust the local position of the endChopstick
+                    endSceneChopstick.transform.localPosition = new Vector3(0f, 1f, 0f);
                 }
                 else
                 {
@@ -134,7 +154,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("endSceneChopstickPrefab is not assigned in the GameManager.");
         }
-    }*/
+    }
+
+
 
 
 

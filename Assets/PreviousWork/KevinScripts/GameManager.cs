@@ -5,10 +5,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-
     public float timeLimit = 30f;
-    public float timer;
+    private float timer;
     private float totalTime;
     private bool isPaused = false;
 
@@ -25,10 +23,9 @@ public class GameManager : MonoBehaviour
 
     private bool hasEndChopsticksSpawned = false;
 
-    void Awake()
-    {
-        instance = this;
-    }
+    [SerializeField] private AudioSource chopstickTrapSound;
+    [SerializeField] private AudioSource endChopstickTrapSound;
+
 
     void Start()
     {
@@ -39,6 +36,8 @@ public class GameManager : MonoBehaviour
         playerTransform = GameObject.FindWithTag("Player").transform;
 
         endUI.SetActive(false);
+
+        
     }
 
     void Update()
@@ -140,6 +139,7 @@ public class GameManager : MonoBehaviour
     {
         timer -= amount;
         UpdateTimerText();
+        chopstickTrapSound.Play();
     }
 
     public void EndSceneChopsticks()
@@ -148,6 +148,7 @@ public class GameManager : MonoBehaviour
         {
             Vector3 spawnPosition = playerTransform.position + new Vector3(1f, 3f, 0f);
             GameObject endSceneChopstick = Instantiate(endSceneChopstickPrefab, spawnPosition, Quaternion.identity);
+            endChopstickTrapSound.Play();
 
             if (endSceneChopstick != null)
             {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimeDecrease : MonoBehaviour
 {
     public float timeDecrease = 5f;
-    [SerializeField] private AudioSource chopstickTrapAudio;
+    
 
    
 
@@ -22,8 +22,8 @@ public class TimeDecrease : MonoBehaviour
             {
 
                 gameManager.DecreaseTimer(timeDecrease);
-               // chopstickTrapAudio.Play();
             }
+              
         }
     }
 }

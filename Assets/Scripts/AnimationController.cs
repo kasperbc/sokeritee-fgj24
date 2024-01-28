@@ -14,6 +14,6 @@ public class AnimationController : MonoBehaviour
 
     public void PlayAnimation()
     {
-        _animation.Play("CameraAnimation");
+        //_animation.Play("CameraAnimation");
     }
 }

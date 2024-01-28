@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour, IPointerClickHandler
 {
@@ -21,16 +22,18 @@ public class MainMenu : MonoBehaviour, IPointerClickHandler
         if (!_entered)
         {
             _entered = true;
-            camera.GetComponent<AnimationController>().PlayAnimation();
+            //camera.GetComponent<AnimationController>().PlayAnimation();
             foreach (var button in buttons) {
                 button.enabled = true;
             }
+            Debug.Log("Button");
         } 
     }
 
     public void PlayGame()
     {
         Debug.Log("Play Game");
+        SceneManager.LoadScene("GameplayScene");
     }
 
     public void QuitGame()

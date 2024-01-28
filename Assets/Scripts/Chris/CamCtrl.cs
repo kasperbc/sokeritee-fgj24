@@ -30,11 +30,12 @@ public class CamCtrl : MonoBehaviour
         if (_delayTime >= 3f)
         {
             _fromCam.transform.position = Vector3.Lerp(_fromCam.position, _toCam.position, _hMoveTime * Time.deltaTime);
-            //_cam.fieldOfView = 80;
+            
 
             if (_delayTime >= 4f)
             {
                 _fromCam.transform.rotation = Quaternion.Slerp(_fromCam.transform.rotation, _toCam.rotation, _vMoveTime * Time.deltaTime);
+                //_cam.fieldOfView = 55;
 
                 if (_delayTime >= 4.5f)
                 {

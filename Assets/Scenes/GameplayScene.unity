@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22849324, g: 0.17922336, b: 0.14784126, a: 1}
+  m_IndirectSpecularColor: {r: 0.22844258, g: 0.17928077, b: 0.14781488, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -447,7 +447,7 @@ PrefabInstance:
     - target: {fileID: 6532744193513753624, guid: 0d61e239a591cae418a11d0b18f451ef,
         type: 3}
       propertyPath: timeLimit
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6532744193513753624, guid: 0d61e239a591cae418a11d0b18f451ef,
         type: 3}
@@ -796,6 +796,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666861603589536823, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666861603589536823, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666861603589536823, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666861603589536823, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2355667204366026901, guid: 510a08d8e80659744b2b5be5f746c793,
         type: 3}

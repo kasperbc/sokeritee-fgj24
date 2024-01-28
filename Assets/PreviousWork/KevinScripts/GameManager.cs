@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
                 playerTransform.Translate(Vector3.up * PlayerUpwardSpeed * Time.deltaTime);
             }
 
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 timer = 0;
             }

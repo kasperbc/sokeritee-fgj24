@@ -26,7 +26,7 @@ public class GameStart : MonoBehaviour
         }
 
         timeBeforeGameStart -= Time.deltaTime;
-        startTimer.text = (Mathf.Ceil(timeBeforeGameStart * 10) / 10).ToString();
+        startTimer.text = (Mathf.Round(Mathf.Ceil(timeBeforeGameStart * 10) / 10)).ToString();
 
         if (timeBeforeGameStart < 0 && !gameStarted)
         {

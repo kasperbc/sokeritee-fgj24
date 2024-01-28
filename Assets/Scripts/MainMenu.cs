@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
@@ -12,9 +10,9 @@ public class MainMenu : MonoBehaviour, IPointerClickHandler
     private bool _entered = false;
 
     public void Start() {
-        foreach (var button in buttons) {
-            button.enabled = false;
-        }
+        //foreach (var button in buttons) {
+        //    button.enabled = false;
+        //}
     }
 
     public void OnPointerClick(PointerEventData evetData)
@@ -23,15 +21,16 @@ public class MainMenu : MonoBehaviour, IPointerClickHandler
         {
             _entered = true;
             //camera.GetComponent<AnimationController>().PlayAnimation();
-            foreach (var button in buttons) {
-                button.enabled = true;
-            }
-            Debug.Log("Button");
-        } 
+            //foreach (var button in buttons) {
+            //    button.enabled = true;
+            //}
+            Debug.Log("Button activated");
+        }
     }
 
     public void PlayGame()
     {
+        Debug.Log("Play Game");
         SceneManager.LoadScene("GameplayScene");
     }
 

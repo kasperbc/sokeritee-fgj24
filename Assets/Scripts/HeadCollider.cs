@@ -15,6 +15,7 @@ public class HeadCollider : MonoBehaviour
         {
             StartCoroutine(PlayRandomClip());
             PlayRandomFallSound();
+            PlayParticle();
         }
     }
 
@@ -38,5 +39,14 @@ public class HeadCollider : MonoBehaviour
         fallSource.pitch = Random.Range(0.9f, 1.1f);
 
         fallSource.Play();
+    }
+
+    void PlayParticle()
+    {
+        ParticleSystem system = GetComponent<ParticleSystem>();
+        if (system != null)
+        {
+            system.Play();
+        }
     }
 }

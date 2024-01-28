@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour, IPointerClickHandler
 {
@@ -30,7 +31,7 @@ public class MainMenu : MonoBehaviour, IPointerClickHandler
 
     public void PlayGame()
     {
-        Debug.Log("Play Game");
+        SceneManager.LoadScene("GameplayScene");
     }
 
     public void QuitGame()

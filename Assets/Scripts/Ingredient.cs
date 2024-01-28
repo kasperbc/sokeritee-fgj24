@@ -69,6 +69,7 @@ public class Ingredient : MonoBehaviour
         Invoke(nameof(DestoryIngredient), destroyTime);
         inAir = false;
         floorHitPos = transform.position;
+        PlayParticle();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -83,6 +84,7 @@ public class Ingredient : MonoBehaviour
             GetComponent<AudioSource>().Play();
 
             GameManager.instance.IncreaseTimer(5);
+            PlayParticle();
             //self.gameObject.layer = playerLayer;
 
             //RaycastHit hit;
@@ -92,6 +94,15 @@ public class Ingredient : MonoBehaviour
             //    self.transform.position = hit.point;
             //    self.transform.position = self.transform.position + (self.transform.forward * self.transform.localScale.z) * 0.5f;
             //}
+        }
+    }
+
+    void PlayParticle()
+    {
+        ParticleSystem system = GetComponent<ParticleSystem>();
+        if (system != null)
+        {
+            system.Play();
         }
     }
     private void DestoryIngredient()

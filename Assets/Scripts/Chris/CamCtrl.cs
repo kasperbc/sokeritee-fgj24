@@ -1,41 +1,46 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CamCtrl : MonoBehaviour
 {
-    Ray _ray;
-    RaycastHit _hit;
-    [SerializeField] private GameObject _obj;
+    //Ray _ray;
+    //RaycastHit _hit;
+    //[SerializeField] private GameObject _obj;
     [SerializeField] private Camera _cam;
     [SerializeField] private Transform _fromCam;
     [SerializeField] private Transform _toCam;
-    [SerializeField] private Transform _menu;
-    [SerializeField] private float _horizontalMoveSpeed = 2f;
-    [SerializeField] private float _verticalMoveSpeed = 1.5f;
-    private float delayTime = 0f;
+    [SerializeField] private GameObject _title;
+    [SerializeField] private float _hMoveTime = 2f;
+    [SerializeField] private float _vMoveTime = 1f;
+    private float _delayTime = 0f;
+
+    void Start()
+    {
+        //Vector3 _cam = transform.position;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.anyKeyDown)
         {
-            _ray = _cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(_ray, out _hit))
+        
+        }
+        _delayTime += Time.deltaTime;
+        if (_delayTime >= 3f)
+        {
+            _fromCam.transform.position = Vector3.Lerp(_fromCam.position, _toCam.position, _hMoveTime * Time.deltaTime);
+            //_cam.fieldOfView = 80;
+
+            if (_delayTime >= 4f)
             {
-                Debug.Log(_hit.collider.gameObject.name);
-                _obj = _hit.collider.gameObject;
-                if (_obj.name == "Table" || _obj.name == "Menu")
+                _fromCam.transform.rotation = Quaternion.Slerp(_fromCam.transform.rotation, _toCam.rotation, _vMoveTime * Time.deltaTime);
+
+                if (_delayTime >= 4.5f)
                 {
-                    Debug.Log("Hit" + _obj.name);
+                    _title.SetActive(false);
                 }
             }
-        }
-        _fromCam.transform.position = Vector3.Lerp(_fromCam.position, _toCam.position, _horizontalMoveSpeed * Time.deltaTime);
-
-        delayTime += Time.deltaTime;
-        if (delayTime >= 0.5f)
-        {
-            _cam.transform.rotation = Quaternion.Slerp(_cam.transform.rotation, _toCam.rotation, _verticalMoveSpeed * Time.deltaTime);
-            _cam.fieldOfView = 35;
         }
     }
 }

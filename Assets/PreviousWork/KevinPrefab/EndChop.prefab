@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeDecrease: 10
-  chopstickTrapAudio: {fileID: 0}
 --- !u!54 &5597053224920599140
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -81,6 +81,8 @@ public class Ingredient : MonoBehaviour
             Destroy(GetComponent<Collider>());
 
             GetComponent<AudioSource>().Play();
+
+            GameManager.instance.IncreaseTimer(5);
             //self.gameObject.layer = playerLayer;
 
             //RaycastHit hit;

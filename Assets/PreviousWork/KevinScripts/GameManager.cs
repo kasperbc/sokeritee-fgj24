@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public float timeLimit = 30f;
-    public float timer {get; private set;}
+    public float timer;
     private float totalTime;
     private bool isPaused = false;
 

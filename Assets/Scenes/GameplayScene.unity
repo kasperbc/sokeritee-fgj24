@@ -343,6 +343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6532744193513753624, guid: 0d61e239a591cae418a11d0b18f451ef,
         type: 3}
+      propertyPath: endChopTimeOnGround
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532744193513753624, guid: 0d61e239a591cae418a11d0b18f451ef,
+        type: 3}
       propertyPath: endSceneChopstickPrefab
       value: 
       objectReference: {fileID: 5276136841077854993, guid: 4085e9eede9a83f4b8ec5d5078526d1c,
@@ -528,6 +533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306849922918576395, guid: 510a08d8e80659744b2b5be5f746c793,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2355667204366026901, guid: 510a08d8e80659744b2b5be5f746c793,
         type: 3}

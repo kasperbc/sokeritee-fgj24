@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2171,17 +2171,17 @@ PrefabInstance:
     - target: {fileID: 3404007235869669663, guid: 058b03658c569f34c9b0aa709f6d0b69,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3562574
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3404007235869669663, guid: 058b03658c569f34c9b0aa709f6d0b69,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.24
+      value: 13.32
       objectReference: {fileID: 0}
     - target: {fileID: 3404007235869669663, guid: 058b03658c569f34c9b0aa709f6d0b69,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.0194294
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3404007235869669663, guid: 058b03658c569f34c9b0aa709f6d0b69,
         type: 3}
@@ -2231,6 +2231,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1859752343579299336, guid: 92f47bdd97d39cf48af06c083dc9a465,
+        type: 3}
+      propertyPath: maxSpawnTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859752343579299336, guid: 92f47bdd97d39cf48af06c083dc9a465,
+        type: 3}
+      propertyPath: minSpawnTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859752343579299336, guid: 92f47bdd97d39cf48af06c083dc9a465,
+        type: 3}
+      propertyPath: maxTimeRemaining
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1859752343579299336, guid: 92f47bdd97d39cf48af06c083dc9a465,
         type: 3}
       propertyPath: spawnableIngredients.Array.size

@@ -5,8 +5,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     public float timeLimit = 30f;
-    private float timer;
+    public float timer {get; private set;}
     private float totalTime;
     private bool isPaused = false;
 
@@ -23,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     private bool hasEndChopsticksSpawned = false;
 
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {

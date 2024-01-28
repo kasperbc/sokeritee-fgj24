@@ -7,8 +7,11 @@ public class IngredientSpawner : MonoBehaviour
 {
     public GameObject[] spawnableIngredients;
     public Vector2 spawnArea;
-    public float spawnTime;
-    public float spawnTimeVariability;
+    
+    public float minSpawnTime;
+    public float maxSpawnTime;
+    public float maxTimeRemaining;
+
     private float timeSinceLastSpawn;
     private float nextSpawnTime;
     void Start()
@@ -34,7 +37,10 @@ public class IngredientSpawner : MonoBehaviour
     void PickNewSpawnTime()
     {
         timeSinceLastSpawn = 0;
-        nextSpawnTime = spawnTime + Random.Range(spawnTimeVariability, -spawnTimeVariability);
+        float timeLeft01 = GameManager.instance.timer / maxTimeRemaining;
+        float spawnTime = Mathf.Clamp(maxSpawnTime * timeLeft01, minSpawnTime, maxSpawnTime);
+
+        nextSpawnTime = spawnTime;
     }
 
     void SpawnIngredient()

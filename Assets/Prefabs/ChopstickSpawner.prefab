@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chopstickPrefab: {fileID: 5276136841077854993, guid: 015ec1d0bb9dd044cb678c2df197cfe5,
     type: 3}
-  playerTransform: {fileID: 0}
-  spawnRadius: 10
-  spawnRate: 10
+  spawnRadius: 29.7
+  spawnRate: 5
   timeOnGround: 3

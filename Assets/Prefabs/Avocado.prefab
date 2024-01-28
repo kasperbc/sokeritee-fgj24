@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f5efe2f94b75a41c484fee00bbf5b6d5,
         type: 3}
       propertyPath: m_Name
-      value: avocado_tests
+      value: Avocado
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f5efe2f94b75a41c484fee00bbf5b6d5,
         type: 3}
@@ -96,10 +96,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7464977253880153840}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f5efe2f94b75a41c484fee00bbf5b6d5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3927631687699384568}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f5efe2f94b75a41c484fee00bbf5b6d5,
         type: 3}
       insertIndex: -1
@@ -136,19 +132,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0011338326, y: 0.0049263528, z: 0.0022904216}
   m_Center: {x: 0.000002732187, y: -0.0003518861, z: -0.00062483933}
---- !u!114 &3927631687699384568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4014838273456251854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86be1b2473b03f44bb737c9117b05f71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeIncrease: 5
 --- !u!114 &744694801252263082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288e9898aebe230449996806b033a68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 10
-  score: 0
+  destroyTime: 5
+  score: 500
 --- !u!82 &5201808801876609250
 AudioSource:
   m_ObjectHideFlags: 0

@@ -162,6 +162,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shrimp Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4999074988935721847, guid: b6a1ae526ea4020418d8bb2ab338ce97,
+        type: 3}
+      propertyPath: score
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999074988935721847, guid: b6a1ae526ea4020418d8bb2ab338ce97,
+        type: 3}
+      propertyPath: destroyTime
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6657818621738367448, guid: b6a1ae526ea4020418d8bb2ab338ce97, type: 3}

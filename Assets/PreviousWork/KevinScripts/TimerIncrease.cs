@@ -18,7 +18,7 @@ public class TimerIncrease : MonoBehaviour
             if (gameManager != null)
             {
 
-                gameManager.IncreaseTimer(timeIncrease);
+                // gameManager.IncreaseTimer(timeIncrease);
             }
         }
     }

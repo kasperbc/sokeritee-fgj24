@@ -50,5 +50,6 @@ MonoBehaviour:
   - {fileID: 1470148579508289323, guid: 01cf7783ed3d05f4092d590cf66c5ddd, type: 3}
   - {fileID: 4014838273456251854, guid: 4b0d850d9d2232445a11ac98edbfb2ef, type: 3}
   spawnArea: {x: 31.19, y: 28.45}
-  spawnTime: 0.1
-  spawnTimeVariability: 0.1
+  minSpawnTime: 0.1
+  maxSpawnTime: 1
+  maxTimeRemaining: 60

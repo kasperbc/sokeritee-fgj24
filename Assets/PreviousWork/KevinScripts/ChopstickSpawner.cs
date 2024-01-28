@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChopstickSpawner : MonoBehaviour
 {
     public GameObject chopstickPrefab;
-    public Transform playerTransform;
-    public float spawnRadius = 5f; 
+    public float spawnRadius = 5f;
     public float spawnRate = 5f;
     public float timeOnGround = 10f;
 
     private void Start()
     {
-        StartCoroutine(DelayedStart());
+        Invoke(nameof(StartChopstickSpawning), 10f);
     }
 
-    IEnumerator DelayedStart()
+    void StartChopstickSpawning()
     {
-        yield return new WaitForSeconds(10f); 
         StartCoroutine(SpawnChopsticks());
     }
 
@@ -32,16 +31,17 @@ public class ChopstickSpawner : MonoBehaviour
 
     void SpawnChopstick()
     {
-        
-        Vector3 randomPosition = Random.insideUnitCircle * spawnRadius;
-        Vector3 spawnPosition = playerTransform.position + new Vector3(randomPosition.x,  randomPosition.y + 10, 0f);
-
+        Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-spawnRadius, spawnRadius), transform.position.y, Random.Range(-spawnRadius, spawnRadius));
         
         GameObject chopstick = Instantiate(chopstickPrefab, spawnPosition, Quaternion.identity);
 
-       
         ChopstickBehavior chopstickBehavior = chopstick.AddComponent<ChopstickBehavior>();
         chopstickBehavior.SetGroundTime(timeOnGround);
+    }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1f, 0, 0, 0.25f);
+        Gizmos.DrawCube(transform.position, new Vector3(spawnRadius * 2, 1f, spawnRadius * 2));
     }
 }

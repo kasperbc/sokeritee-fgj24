@@ -17,7 +17,7 @@ public class GameOverLine : MonoBehaviour
     {
         source.clip = clips[Random.Range(0, clips.Length)];
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2f);
 
         source.Play();
     }

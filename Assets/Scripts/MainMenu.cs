@@ -22,10 +22,11 @@ public class MainMenu : MonoBehaviour, IPointerClickHandler
         if (!_entered)
         {
             _entered = true;
-            camera.GetComponent<AnimationController>().PlayAnimation();
+            //camera.GetComponent<AnimationController>().PlayAnimation();
             foreach (var button in buttons) {
                 button.enabled = true;
             }
+            Debug.Log("Button");
         } 
     }
 
